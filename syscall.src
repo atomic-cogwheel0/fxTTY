@@ -1,0 +1,140 @@
+	.EXPORT  _InputNumber, _LongToAscHex, _Comm_Open, _Comm_GetCurrentSelector, _Comm_TransmitOneByte, _Comm_Close
+	.EXPORT _Comm_Spy0thByte, _Comm_WaitForAndReadNBytes, _InputString, _Comm_TransmitNBytes, _Comm_IsValidPacketAvailable
+	.EXPORT _Comm_WaitForAnyBuffer, _Comm_ReadOneByte, _Cursor_SetFlashOn, _Cursor_SetFlashOff
+	.EXPORT _GetAutoPowerOffTime, _SetAutoPowerOffTime, _GetShiftAlphaState, _SetShiftAlphaState, _Cursor_GetSettings
+	.EXPORT _LocalizeStringID
+	.SECTION P,CODE,ALIGN=4
+
+_InputNumber:
+	mov.l #H'80010070, r1
+	mov.l #H'0CC4, r0
+	jmp @r1
+	nop
+
+_InputString:
+	mov.l #H'80010070, r1
+	mov.l #H'0CC5, r0
+	jmp @r1
+	nop
+
+_LongToAscHex:
+	mov.l #H'80010070, r1
+	mov.l #H'0467, r0
+	jmp @r1
+	nop
+
+_Comm_Open:
+	mov.l #H'80010070, r1
+	mov.l #H'028D, r0
+	jmp @r1
+	nop	
+
+_Comm_GetCurrentSelector:
+	mov.l #H'80010070, r1
+	mov.l #H'0299, r0
+	jmp @r1
+	nop	
+
+_Comm_TransmitOneByte:
+	mov.l #H'80010070, r1
+	mov.l #H'0291, r0
+	jmp @r1
+	nop
+
+_Comm_ReadOneByte:
+	mov.l #H'80010070, r1
+	mov.l #H'0290, r0
+	jmp @r1
+	nop
+
+_Comm_Spy0thByte:
+	mov.l #H'80010070, r1
+	mov.l #H'02AF, r0
+	jmp @r1
+	nop
+
+_Comm_WaitForAndReadNBytes:
+	mov.l #H'80010070, r1
+	mov.l #H'0292, r0
+	jmp @r1
+	nop
+
+_Comm_Close:
+	mov.l #H'80010070, r1
+	mov.l #H'028E, r0
+	jmp @r1
+	nop
+
+_Comm_TransmitNBytes:
+	mov.l #H'80010070, r1
+	mov.l #H'0291, r0
+	jmp @r1
+	nop
+
+_Comm_IsValidPacketAvailable:
+	mov.l #H'80010070, r1
+	mov.l #H'0296, r0
+	jmp @r1
+	nop
+
+_Comm_WaitForAnyBuffer:
+	mov.l #H'80010070, r1
+	mov.l #H'028F, r0
+	jmp @r1
+	nop
+
+_KeyBoard_ClrBuffer:
+	mov.l #H'80010070, r1
+	mov.l #H'0241, r0
+	jmp @r1
+	nop
+
+_Cursor_SetFlashOn:
+	mov.l #H'80010070, r1
+	mov.l #H'0811, r0
+	jmp @r1
+	nop
+
+_Cursor_SetFlashOff:
+	mov.l #H'80010070, r1
+	mov.l #H'0812, r0
+	jmp @r1
+	nop
+
+_GetAutoPowerOffTime:
+	mov.l #H'80010070, r1
+	mov.l #H'0480, r0
+	jmp @r1
+	nop
+
+_SetAutoPowerOffTime:
+	mov.l #H'80010070, r1
+	mov.l #H'047F, r0
+	jmp @r1
+	nop
+
+_GetShiftAlphaState:
+	mov.l #H'80010070, r1
+	mov.l #H'091B, r0
+	jmp @r1
+	nop
+
+_SetShiftAlphaState:
+	mov.l #H'80010070, r1
+	mov.l #H'090B, r0
+	jmp @r1
+	nop
+
+_Cursor_GetSettings:
+	mov.l #H'80010070, r1
+	mov.l #H'013B, r0
+	jmp @r1
+	nop
+
+_LocalizeStringID:
+	mov.l #H'80010070, r1
+	mov.l #H'04E9, r0
+	jmp @r1
+	nop
+
+	.END
