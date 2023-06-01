@@ -8,5 +8,7 @@ Communication is currently implemented via the Mini-USB port on the calculators.
 
 I have only tested on my 9750-GIII, but I think as long as it has an USB port, it will run well.
 
+The setup.sh is for Linux systems; it adds an udev rule to set the calculator as a serial terminal.
+
 
 (I have no clue who this might prove useful for)
