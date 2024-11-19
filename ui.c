@@ -87,12 +87,15 @@ int strtoi_n(unsigned char *s, unsigned char end) {
 }
 
 void print_com_error(void) {
+	static unsigned char buf[64];
 	cursor_disable();
 	PopUpWin(4);
 	locate(1, 3);
-	Print(LocalizeStringID(100)); //Com ERROR
+	LocalizeStringID(100, buf); //Com ERROR
+	Print(buf);
 	locate(1, 5);
-	Print(LocalizeStringID(1)); //Press: [EXIT]
+	LocalizeStringID(1, buf); //Press: [EXIT]
+	Print(buf); 
 	Bdisp_PutDisp_DD();
 }
 

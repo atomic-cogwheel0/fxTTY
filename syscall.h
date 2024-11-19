@@ -59,7 +59,7 @@ void Cursor_SetFlashOff(void);
 
 unsigned int Cursor_GetSettings(unsigned int *settings);
 
-unsigned char *LocalizeStringID(int id);
+unsigned char *LocalizeStringID(int id, unsigned char *out);
 
 int GetShiftAlphaState(void);
 int SetShiftAlphaState(int state);
